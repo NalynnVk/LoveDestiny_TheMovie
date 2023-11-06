@@ -12,30 +12,51 @@
         body {
             background-color: black;
             color: palevioletred;
-            /* Primary text color */
             font-family: Arial, sans-serif;
         }
 
         .navbar {
             background-color: palevioletred;
+        }
+
+        .navbar a {
             color: white;
-            /* Navbar background color */
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
         }
 
         .header {
             background-color: palevioletred;
-            /* Header background color */
             color: white;
             padding: 10px 0;
             text-align: center;
         }
 
-        .footer {
+        .form-control[type="search"] {
+            background-color: white;
+        }
+
+        .btn-outline-success {
+            color: gray;
+            background-color: white;
+            border-color: white;
+        }
+
+        .btn-outline-success:hover {
+            background-color: greenyellow;
+            border-color: greenyellow;
+        }
+
+        /* Add custom class to scale down content within the container */
+        .scaled-container {
             background-color: palevioletred;
-            /* Footer background color */
+            border-radius: 15px;
+            padding: 20px;
             color: white;
-            padding: 10px 0;
-            text-align: center;
+            font-size: 90%;
+            /* Reduce font size */
         }
 
         .primary-subtle {
@@ -46,32 +67,67 @@
 
         .secondary-subtle {
             background-color: grey;
-            /* Secondary background color */
             color: black;
             border: 1px solid grey;
         }
 
-        /* Override Bootstrap's default link color */
         a {
-            color: inherit;
+            color: palevioletred;
         }
 
-        /* Remove background color from form elements and set transparent background for labels */
         .form-control,
         .form-label {
             background-color: transparent;
             border-color: palevioletred;
             color: palevioletred;
+            font-size: 80%;
+            /* Reduce font size */
         }
 
-        /* Add custom styles to the table */
         .table {
             background-color: transparent;
+        }
+
+        th,
+        td {
+            padding: 6px;
+            /* Reduce padding */
         }
 
         .table td {
             color: palevioletred;
         }
+
+        .footer {
+            background-color: palevioletred;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 80%;
+            /* Reduce font size */
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio (9 / 16 * 100%) */
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-header {
+            background-color: rgb(67, 105, 158);
+            color: white;
+        }
+
+        .card-body {}
     </style>
 </head>
 
@@ -79,7 +135,10 @@
     <div class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <b><a class="navbar-brand" href="companyprofilepage">Love Destiny</a></b>
+                <a class="navbar-brand" href="/">
+                    <img src="assets/LoveDestiny2Logo.png" href="/" alt="Love Destiny"
+                        style="width: 130px; height: auto;">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +147,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="productpage">Products</a>
+                            <a class="nav-link" href="/moviecharacter">Movie Character</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/movieplot">Movie Plot</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -113,64 +175,86 @@
             </div>
         </nav>
     </div>
+
     <br>
-    <div class="container mt-4">
+    <div class="container mt-4 scaled-container">
         <div class="row">
             <div class="col-md-4">
                 <div class="text-center">
                     <img src="assets/lovedestinyposter.jpg" alt="lovedestinyposter"
-                        style="max-width: 97%; height: auto;">
+                        style="max-width: 88%; height: auto;">
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="p-3 primary-subtle rounded-3">
-                    <h1>Love Destiny: The Movie</h1>
-                    <br>
-                    <table>
-                        <tr>
-                            <td>RELEASE DATE</td>
-                            <td>: 6 Oct 2022</td>
-                        </tr>
-                        <tr>
+                <div class="card mb-4 border-secondary">
+                    <div class="card-header card-header-indigo text-white">
+                        <h2 class="card-title">Love Destiny: The Movie</h2>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <td>RELEASE DATE</td>
+                                <td>: 6 OCTOBER 2022</td>
+                            </tr>
+                            {{-- <tr>
                             <td>LANGUAGE</td>
                             <td>: Thai</td>
-                        </tr>
-                        <tr>
-                            <td>GENRE</td>
-                            <td>: Romance, Comedy</td>
-                        </tr>
-                        <tr>
+                        </tr> --}}
+                            <tr>
+                                <td>GENRE</td>
+                                <td>: ROMANCE, COMEDY</td>
+                            </tr>
+                            {{-- <tr>
                             <td>RUNNING TIME</td>
                             <td>: 166 minutes</td>
-                        </tr>
-                        <tr>
-                            <td>DIRECTOR</td>
-                            <td>: Adisorn Tresirikasem</td>
-                        </tr>
-                        <tr>
-                            <td>CAST</td>
-                            <td>: Thanavat Vatthanaputi, Ranee Campen, Paris Intarakomalyasut</td>
-                        </tr>
-                    </table>
+                        </tr> --}}
+                            <tr>
+                                <td>DIRECTOR</td>
+                                <td>: ADISORN TRESIRIKASEM</td>
+                            </tr>
+                            <tr>
+                                <td>CAST</td>
+                                <td>: THANAVAT VATTHANAPUTI, RANEE CAMPEN, PARIS INTARAKOMALYASUT</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <br>
-                <div class="p-3 secondary-subtle rounded-3 mt-4">
-                    <h2>Synopsis</h2>
+                <div class="card mb-4 border-secondary">
+                    <div class="card-header card-header-indigo text-white">
+                        <h2 class="card-title">Synopsis</h2>
+                    </div>
                     <br>
-                    <p>In a tale spanning centuries, destiny weaves an intricate web. Dej and Karaket, bound together
-                        even in death during the Ayutthaya era, find themselves reborn in the early Rattanakosin period.
-                        But only one of them still clings to the idea of 'destiny.' Bhop, a charming chief engineer, has
-                        long dreamt of a mysterious lady, his soulmate, believing in the power of fate. When he
-                        encounters Gaysorn, her striking resemblance to the woman of his dreams sets him on a quest to
-                        win her heart.
+                    <div class="card-body">
+                        <p>In a tale spanning centuries, destiny weaves an intricate web. Dej and Karaket, bound
+                            together
+                            even in death during the Ayutthaya era, find themselves reborn in the early Rattanakosin
+                            period.
+                            But only one of them still clings to the idea of 'destiny.' Bhop, a charming chief engineer,
+                            has
+                            long dreamt of a mysterious lady, his soulmate, believing in the power of fate. When he
+                            encounters Gaysorn, her striking resemblance to the woman of his dreams sets him on a quest
+                            to
+                            win her heart.</p>
 
-                        But Gaysorn, a free spirit, doesn't believe in destiny. Her affections lie elsewhere, with
-                        Mathus, a Thai-Western man whose cryptic messages in an ancient journal echo those of Lady
-                        Karaket. Is Mathus a time traveler from the future? As their intertwined destinies collide, a
-                        historical upheaval looms, threatening to reshape history. </p>
+                        <p>But Gaysorn, a free spirit, doesn't believe in destiny. Her affections lie elsewhere, with
+                            Mathus, a Thai-Western man whose cryptic messages in an ancient journal echo those of Lady
+                            Karaket. Is Mathus a time traveler from the future? As their intertwined destinies collide,
+                            a
+                            historical upheaval looms, threatening to reshape history. </p>
 
-                    <p>The question remains: where will destiny ultimately lead them?</p>
+                        <p>The question remains: where will destiny ultimately lead them?</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="container scaled-container">
+        <div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/MXTVYeg1D5s" frameborder="10" allowfullscreen></iframe>
             </div>
         </div>
     </div>
