@@ -7,28 +7,36 @@
     <title>Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kinnari&family=Limelight&display=swap" rel="stylesheet">
+
+
 
     <style>
-        body {
-            background-color: black;
-            color: palevioletred;
-            font-family: Arial, sans-serif;
-        }
-
         .navbar {
-            background-color: palevioletred;
+            background-color: rgb(226, 97, 125);
+            padding: 16px 0;
         }
 
         .navbar a {
             color: white;
         }
 
+        .dropdown-menu .dropdown-item {
+            color: black;
+            /* Change the color to black or a color that's easily readable */
+        }
+
         .navbar-toggler-icon {
             background-color: white;
+            color: black;
         }
 
         .header {
-            background-color: palevioletred;
+            background-color: rgb(226, 97, 125);
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -39,9 +47,9 @@
         }
 
         .btn-outline-success {
-            color: gray;
-            background-color: white;
-            border-color: white;
+            color: white;
+            background-color: #b0c7ce;
+            border-color: #b0c7ce;
         }
 
         .btn-outline-success:hover {
@@ -49,20 +57,26 @@
             border-color: greenyellow;
         }
 
-        /* Add custom class to scale down content within the container */
-        .scaled-container {
-            background-color: palevioletred;
-            border-radius: 15px;
-            padding: 20px;
+        body {
+            background-image: url('assets/wallpaper-gold.jpg');
+            background-size: cover;
+            background-position: 50% center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: white;
-            font-size: 90%;
-            /* Reduce font size */
+            font-family: 'Cinzel', cursive;
+            font-size: 17px;
         }
+
+        .rounded-image {
+            border-radius: 25px;
+        }
+
 
         .primary-subtle {
             background-color: black;
-            color: palevioletred;
-            border: 1px solid palevioletred;
+            color: rgb(226, 97, 125);
+            border: 1px solid rgb(226, 97, 125);
         }
 
         .secondary-subtle {
@@ -72,16 +86,15 @@
         }
 
         a {
-            color: palevioletred;
+            color: rgb(226, 97, 125);
         }
 
         .form-control,
         .form-label {
             background-color: transparent;
-            border-color: palevioletred;
-            color: palevioletred;
+            border-color: rgb(226, 97, 125);
+            color: rgb(226, 97, 125);
             font-size: 80%;
-            /* Reduce font size */
         }
 
         .table {
@@ -91,26 +104,23 @@
         th,
         td {
             padding: 6px;
-            /* Reduce padding */
         }
 
         .table td {
-            color: palevioletred;
+            color: rgb(226, 97, 125);
         }
 
         .footer {
-            background-color: palevioletred;
+            background-color: rgb(226, 97, 125);
             color: white;
             padding: 10px 0;
             text-align: center;
-            font-size: 80%;
-            /* Reduce font size */
+            font-size: 100%;
         }
 
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
-            /* 16:9 aspect ratio (9 / 16 * 100%) */
             height: 0;
         }
 
@@ -123,19 +133,91 @@
         }
 
         .card-header {
-            background-color: rgb(67, 105, 158);
-            color: white;
+            background-color: rgb(226, 97, 125);
         }
 
-        .card-body {}
+        h2 {
+            color: black;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        .card-body {
+            color: black;
+            font-weight: bold;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14.5px;
+            text-align: justify;
+        }
+
+        .scaled-container-black {
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            font-size: 90%;
+            width: 88%;
+            height: 50%;
+        }
+
+        Set the background color of the second container to palevioletred .scaled-container-palevioletred {
+            background-color: rgb(226, 97, 125);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            font-size: 70%;
+        }
+
+        .scaled-container-palevioletred {
+            background-color: black;
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            font-size: 70%;
+            width: 83%;
+            height: 50%;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: url('play-button.png') no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .play-button:hover {
+            background-image: url('play-button-hover.png');
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand poster" href="/">
                     <img src="assets/LoveDestiny2Logo.png" href="/" alt="Love Destiny"
                         style="width: 130px; height: auto;">
                 </a>
@@ -159,71 +241,71 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">About Us</a></li>
-                                <li><a class="dropdown-item" href="#">Social Media</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/contactus">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="https://www.netflix.com/my/title/81639974">Social
+                                        Media</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
+                    {{-- <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </nav>
     </div>
-
     <br>
-    <div class="container mt-4 scaled-container">
+    <br>
+    <br>
+    <div class="container mt-4 scaled-container-black fade-in">
         <div class="row">
             <div class="col-md-4">
-                <div class="text-center">
-                    <img src="assets/lovedestinyposter.jpg" alt="lovedestinyposter"
-                        style="max-width: 88%; height: auto;">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <img class="rounded" src="assets/lovedestinyposter.jpg" alt="lovedestinyposter"
+                            style="max-width: 307%; height: auto;">
+                    </div>
                 </div>
+
             </div>
             <div class="col-md-8">
                 <div class="card mb-4 border-secondary">
                     <div class="card-header card-header-indigo text-white">
-                        <h2 class="card-title">Love Destiny: The Movie</h2>
+                        <h2 class="card-title" style="color: white;">Love Destiny: The Movie</h2>
                     </div>
                     <div class="card-body">
                         <table>
                             <tr>
-                                <td>RELEASE DATE</td>
-                                <td>: 6 OCTOBER 2022</td>
+                                <td>Release Date</td>
+                                <td>: 6 October 2022</td>
+                            </tr>
+                            <tr>
+                                <td>Language</td>
+                                <td>: Thai</td>
+                            </tr>
+                            <tr>
+                                <td>Genre</td>
+                                <td>: Romance, Comedy</td>
                             </tr>
                             {{-- <tr>
-                            <td>LANGUAGE</td>
-                            <td>: Thai</td>
+                            <td>running Time</td>
+                            <td>: 166 Minutes</td>
                         </tr> --}}
                             <tr>
-                                <td>GENRE</td>
-                                <td>: ROMANCE, COMEDY</td>
-                            </tr>
-                            {{-- <tr>
-                            <td>RUNNING TIME</td>
-                            <td>: 166 minutes</td>
-                        </tr> --}}
-                            <tr>
-                                <td>DIRECTOR</td>
-                                <td>: ADISORN TRESIRIKASEM</td>
+                                <td>Director</td>
+                                <td>: Adisorn Tresirikasem</td>
                             </tr>
                             <tr>
-                                <td>CAST</td>
-                                <td>: THANAVAT VATTHANAPUTI, RANEE CAMPEN, PARIS INTARAKOMALYASUT</td>
+                                <td>Cast</td>
+                                <td>: Thanavat Vatthanaputi, Ranee Campen, Paris Intarakomalyasut</td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div class="card mb-4 border-secondary">
                     <div class="card-header card-header-indigo text-white">
-                        <h2 class="card-title">Synopsis</h2>
+                        <h2 class="card-title" style="color: white;">Synopsis</h2>
                     </div>
-                    <br>
                     <div class="card-body">
                         <p>In a tale spanning centuries, destiny weaves an intricate web. Dej and Karaket, bound
                             together
@@ -251,17 +333,20 @@
 
     <br>
     <br>
-    <div class="container scaled-container">
-        <div>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/MXTVYeg1D5s" frameborder="10" allowfullscreen></iframe>
-            </div>
+    <div class="container scaled-container-palevioletred fade-in">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ShD0CvB9kWM?autoplay=1&mute=1" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="play-button"></div>
         </div>
     </div>
+
     <br>
     <br>
     <div class="footer">
-        <p>&copy; 2023 Love Destiny: The Movie</p>
+        <b>
+            &copy; 2023 Love Destiny: The Movie
+        </b>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
